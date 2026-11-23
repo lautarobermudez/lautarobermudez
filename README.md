@@ -1,31 +1,85 @@
-# Hi, I'm Lautaro 👋
+# Lautaro Bermúdez
 
-**I do administration by developing.** My base is administration and finance (payments, treasury, cash flow and back office for a group of companies) and my method is building: I replace manual processes with a database, code and AI automation.
+**Finance Automation & Data Solutions**  
+Financial Operations · Python · SQL/PostgreSQL · Business Intelligence · AI-assisted Automation
 
-I'm an International Relations graduate working at the intersection of **finance operations, data and software**. I use AI tools such as Claude Code to build faster, and I focus on being able to read, review and explain the code that gets written.
+I work at the intersection of **finance operations, data, and software**. My background is in administration and treasury—accounts payable, cash flow, bank statements, and financial reporting. I identify operational bottlenecks, define the business rules, and build tools that make financial information more reliable and useful.
 
-## Projects
-Real tools from my work, as sanitized public copies built on synthetic data (each README says what is and isn't included):
+At work, I began by automating payment workflows so routine tasks could be supervised rather than processed manually. That grew into a broader initiative: centralizing finance data, developing reporting capabilities that had not previously existed, and building internal tools for analysis. These projects started from **real operational needs**, not tutorial exercises.
 
-| Project | What it does | Stack |
-|---|---|---|
-| [payments-data-platform](https://github.com/lautarobermudez/payments-data-platform) | PostgreSQL data model for payment orders, safe ETL (dry-run, idempotent, reconciled) and data-quality tests | PostgreSQL, Python, Docker, CI |
-| [payments-streamlit-app](https://github.com/lautarobermudez/payments-streamlit-app) | Read-only explorer for payment orders, layered code with end-to-end tests | Python, Streamlit, SQL |
-| [payments-bi-dashboards](https://github.com/lautarobermudez/payments-bi-dashboards) | Payments dashboard on a PostgreSQL `bi` schema | Power BI (PBIP), Tableau |
-| [purchase-order-automation](https://github.com/lautarobermudez/purchase-order-automation) | Turns purchase orders, invoices and tax bills into payment orders: inbox review, validation gate, LLM invoice reading | Python, IMAP/SMTP, Claude |
-| [bank-statement-consolidation](https://github.com/lautarobermudez/bank-statement-consolidation) | Turns messy bank statements from many banks and accounts into one clean Excel per bank with a verified running balance | Python, Claude Code skill |
+## Finance automation portfolio
 
-## Freelance work
-Automation for a digital media project (NFL content):
-[nfl-content-automation](https://github.com/lautarobermudez/nfl-content-automation) (articles uploaded as WordPress drafts via REST API, with Search Console and GA4 signals) ·
-[tweets-nohuddle](https://github.com/lautarobermudez/tweets-nohuddle) (Claude Code skill that builds the daily tweets and threads, with tests)
+Five connected projects illustrate the journey from **source documents → controlled workflows → reliable data → financial analysis and applications**.
 
-## Tools
-**Data and software:** Python · SQL · PostgreSQL · Supabase · ETL · FastAPI · Git/GitHub
-**AI and automation:** Claude and ChatGPT · agents and skills · MCP · process automation with code
-**Analytics:** Power BI · Excel · Tableau
-**Business systems:** SOS Contador · Xubio · Finnegans
+```mermaid
+flowchart LR
+    A["Purchase orders & invoices"] --> B["Payment order automation"]
+    B --> C[("Payments data platform")]
+    D["Bank statements"] --> E["Bank statement consolidation"]
+    C --> F["BI dashboards"]
+    C --> G["Streamlit finance app"]
+    E -. "Verified bank data / future integration" .-> C
+```
+
+> **Portfolio scope:** These are public, sanitized or rebuilt versions of solutions informed by work experience. They use synthetic data and exclude confidential company information. The repositories explain their own scope and limitations. The diagram shows how the tools relate conceptually; the dotted connection is **not** an implemented production integration.
+
+### 1. Core platform — [Payments Data Platform](https://github.com/lautarobermudez/payments-data-platform)
+**Problem:** Payment orders, suppliers, and treasury information were fragmented across files, making consistent financial reporting difficult.
+
+**Solution:** A PostgreSQL relational model and Python ETL pipeline, with validation, transactional dry-runs, idempotent loading, source-to-database reconciliation, and BI-ready views. The public rebuild includes synthetic datasets, SQL data-quality rules, and CI.
+
+**Skills:** PostgreSQL · Python · ETL · Data modeling · Docker · Data quality
+
+### 2. Operational automation — [Purchase Order Automation](https://github.com/lautarobermudez/purchase-order-automation)
+**Problem:** Turning incoming purchase orders, invoices, and payment requests into payment orders required repetitive administrative work.
+
+**Solution:** Python-based payment-order generation and mailbox review, plus AI-assisted invoice extraction where needed. Validation rules, duplicate detection, dry-run defaults, and human approval protect the workflow.
+
+**Skills:** Python · Accounts payable · Document processing · Claude Code · Controls and validation
+
+### 3. Bank data — [Bank Statement Consolidation](https://github.com/lautarobermudez/bank-statement-consolidation)
+**Problem:** Preparing a fiscal-year report required consolidating bank statements from multiple accounts, banks, periods, and file formats, often with overlapping downloads.
+
+**Solution:** A reproducible pipeline to inventory, normalize, deduplicate, consolidate, and verify transactions and running balances. The repository includes a Claude Code skill, sample data generator, tests, and example Excel outputs.
+
+**Skills:** Python · Financial reconciliation · Excel · Data normalization · Traceability
+
+### 4. Financial reporting — [Payments BI Dashboards](https://github.com/lautarobermudez/payments-bi-dashboards)
+**Problem:** Finance teams need visibility into spending, suppliers, payables, due dates, and cost centers—not just raw transactions.
+
+**Solution:** Power BI and Tableau dashboards built on the data platform's BI views, with documented measures, visuals, screenshots, and synthetic data.
+
+**Skills:** Power BI · DAX · Tableau · SQL · Financial KPIs
+
+### 5. Internal data tools — [Payments Streamlit App](https://github.com/lautarobermudez/payments-streamlit-app)
+**Problem:** Operational users need a simple way to explore payment orders, supplier balances, and upcoming or overdue obligations.
+
+**Solution:** A read-only Streamlit application backed by PostgreSQL views, with separate query and calculation layers and tests comparing displayed KPIs with SQL.
+
+**Skills:** Python · Streamlit · PostgreSQL · Data applications · Testing
+
+## How I work
+
+- **Start with the business problem.** Understand the financial process, controls, exceptions, and the information decision-makers need.
+- **Make data verifiable.** Prefer repeatable ETL, reconciliation, explicit validation, and traceable outputs over manual fixes.
+- **Keep humans in control.** Financial workflows should expose uncertain inputs and require review before consequential actions.
+- **Use AI transparently.** I use Claude Code and other AI tools to accelerate development. I define requirements and business rules, review results, test behavior, and document limitations; the individual repositories describe the extent of assistance.
+
+## Other work
+
+Digital media automation: [NFL Content Automation](https://github.com/lautarobermudez/nfl-content-automation) · [Tweets No Huddle](https://github.com/lautarobermudez/tweets-nohuddle).
+
+## Tools & background
+
+**Finance:** Accounts payable · Treasury operations · Cash flow · Bank reconciliations · Financial reporting  
+**Data & development:** Python · SQL · PostgreSQL · Supabase · ETL · FastAPI · Git/GitHub  
+**Analytics:** Power BI · DAX · Tableau · Advanced Excel  
+**AI & automation:** Claude Code · Skills/agents · MCP  
+**Education:** B.A. in International Relations, Universidad Nacional de San Martín  
 **Languages:** Spanish (native) · English (B2)
 
-## Looking for
-Roles in **finance automation, finance systems and finance operations** where administration and software meet.
+## Opportunities & contact
+
+I'm interested in **Finance Automation, Finance Systems, Financial Data Analysis, Business Analysis, and Finance Operations** roles where business knowledge and technical execution meet.
+
+[LinkedIn](https://www.linkedin.com/in/lautaro-bermudez-458b83a3/) · [Explore my repositories](https://github.com/lautarobermudez?tab=repositories)
