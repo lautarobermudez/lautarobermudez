@@ -26,9 +26,9 @@ flowchart LR
 ### 1. Core platform — [Payments Data Platform](https://github.com/lautarobermudez/payments-data-platform)
 **Problem:** Payment orders, suppliers, and treasury information were fragmented across files, making consistent financial reporting difficult.
 
-**Solution:** A PostgreSQL relational model and Python ETL pipeline, with validation, transactional dry-runs, idempotent loading, source-to-database reconciliation, and BI-ready views. The public rebuild includes synthetic datasets, SQL data-quality rules, and CI.
+**Solution:** A PostgreSQL relational model and an incremental Python ETL pipeline: dry-run by default, content hashes to load only new or changed rows, a quarantine for invalid rows, and source-to-database reconciliation that rolls everything back on mismatch. A trigger-based audit trail records every change (old and new row, who, which run), every execution is logged, and a read-only **FastAPI** REST API exposes orders, suppliers, payables aging and the run log, with "read-only, no bank data" enforced by the database role. The public rebuild includes synthetic datasets, SQL data-quality rules, BI-ready views, `make demo`, and CI.
 
-**Skills:** PostgreSQL · Python · ETL · Data modeling · Docker · Data quality
+**Skills:** PostgreSQL · Python · ETL · Data modeling · Audit trail · REST API (FastAPI) · Docker · Data quality
 
 ### 2. Operational automation — [Purchase Order Automation](https://github.com/lautarobermudez/purchase-order-automation)
 **Problem:** Turning incoming purchase orders, invoices, and payment requests into payment orders required repetitive administrative work.
